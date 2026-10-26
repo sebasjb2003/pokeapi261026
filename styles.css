@@ -1,0 +1,163 @@
+@import url("./node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("./node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+
+
+:root{
+    --primaryColor: #DC0A2D;
+    --secondaryColor: #30A7D7;
+    --tertiaryColor: #51AD60;
+    --neutral: #232323;
+    --textColor : white;
+    --bodyBgcolor: #0d0d0d;
+    --selectSearchInputBg: #1f2020;
+}
+
+
+*{
+    font-family: "Space Mono", monospace;
+}
+ 
+/***************************************************************************************/
+
+
+.bg-primary{
+    background-color: var(--primaryColor) !important;
+}
+
+
+/***************************************************************************************/
+
+body{
+    background-color: var(--bodyBgcolor);
+}
+
+.logo-container span{
+    color: var(--textColor);
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.form-search-input-container .form-control{
+    background-color: var(--selectSearchInputBg);
+    border-color: transparent !important;
+    border-radius: 5px !important;
+}
+
+.form-search-input-container .form-control::placeholder{
+    color: grey;
+}
+
+
+.form-search-input-container .form-control:active, .form-search-input-container .form-control:focus{
+    box-shadow: 0 0 0 .05rem rgba(255,255,255,.4);
+    border-color: transparent !important;
+}
+
+
+.form-search-input-container .input-group-text{
+    border-radius: 24px !important;
+    margin-right: 15px;
+    background-color: #dc0a2d;
+    border-color: transparent !important;
+    padding: 10px;
+}
+
+
+.form-search-input-container .input-group-text i{
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+
+
+@media(min-width: 992px){
+    .navbar-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main-menu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main-menu li *{
+        color: white;;
+    }
+}
+.pokemon-img {
+    max-width: 475px;
+    width: 100%;
+    height: auto;
+}
+
+.libro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    height: calc(100vh - 150px);
+    min-height: 560px;
+    margin: 0 auto;
+    background: #fbf6e9;
+    border: 10px solid #8b2e2e;
+    border-radius: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .25);
+    overflow: hidden;
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;          /* permite que el scroll funcione dentro */
+    padding: 1.25rem;
+}
+
+/* efecto de lomo en el centro del libro */
+.pagina-izq { box-shadow: inset -14px 0 18px -14px rgba(0, 0, 0, .3); }
+.pagina-der {
+    overflow-y: auto;
+    border-left: 2px solid #d9cba6;
+    box-shadow: inset 14px 0 18px -14px rgba(0, 0, 0, .3);
+}
+
+/* la ficha ya no necesita ser tan "tarjeta" dentro del libro */
+.pagina-der .pokemon-card {
+    max-width: none;
+    box-shadow: none;
+}
+
+/* lista */
+.lista-pokemon {
+    flex: 1;
+    min-height: 0;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.item-pokemon {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    padding: .15rem .5rem;
+    background: none;
+    border: 0;
+    border-bottom: 1px dashed #d9cba6;
+    text-align: left;
+    font-family: inherit;
+}
+.item-pokemon:hover { background: #f4ead0; }
+.item-pokemon.activo { background: #f3d6d6; font-weight: 700; }
+.item-pokemon img { width: 48px; height: 48px; }
+.item-num { width: 3.5rem; color: #8a7e5f; font-size: .8rem; }
+.item-nombre { text-transform: capitalize; }
+
+@media (max-width: 767px) {
+    .libro { grid-template-columns: 1fr; height: auto; }
+    .lista-pokemon { max-height: 320px; }
+}
